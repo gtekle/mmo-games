@@ -14,5 +14,4 @@ window.addEventListener('load', () => {
       renderGame(game);
     }
   });
-
 });

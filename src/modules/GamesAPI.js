@@ -8,15 +8,15 @@ class GamesApi {
   }
 
   async getGames() {
-    this.games.push(... await fetch(`${GAMES_API_BASE_URL}/games`,
+    this.games.push(...await fetch(`${GAMES_API_BASE_URL}/games`,
       {
         headers: {
           'x-rapidapi-host': HOST,
-          'x-rapidapi-key': API_KEY
-        }
+          'x-rapidapi-key': API_KEY,
+        },
       })
       .then((response) => response.json())
-      .then(data => data)
+      .then((data) => data)
       .catch((error) => error));
     return this.games;
   }
