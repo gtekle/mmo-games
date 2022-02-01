@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   devServer: {
     static: './dist',
@@ -19,8 +20,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'mmo games',
-      template: './src/index.html',
-      inject: false,
+      template: './src/index.html'
     }),
   ],
   module: {
