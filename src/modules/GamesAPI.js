@@ -1,6 +1,7 @@
+import API_KEY from '../../config.js';
+
 const GAMES_API_BASE_URL = 'https://mmo-games.p.rapidapi.com';
 const HOST = 'mmo-games.p.rapidapi.com';
-const API_KEY = 'dbb7593505mshdb2b499e2f3acf1p12c4c1jsn93ec8e29d6c6';
 
 class GamesApi {
   constructor() {
