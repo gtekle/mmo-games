@@ -21,11 +21,15 @@
     </nav>
   </header>
   <h1>MMO Games</h1>
-  <button> Test Button to Bring Comments Pop Up</button>
+  <button id="comment-trial-button"> Test Button to Bring Comments Pop Up</button>
+
+  <!-- Pop Up Comment Section MarkUp (Hidden in initial Load) -->
+  <section class="comment-popup-section" id="comment-popup-section">
   <div class="comment-pop-up-container">
     <div class="image-thumbnail-delete-icon-container">
       <img src="https://www.mmobomb.com/g/1/thumbnail.jpg" alt="game-image-thumbnail" class="comment-game-image">
-      <img src="./icons/icons8-delete-64.png" alt="delete-pop-up-icon">
+      <div id="delete-popup" class="comment-delete-icon"></div>
+        <!-- alt="delete-pop-up-icon"  -->
     </div>
     <h3 class="comment-name-of-game"> "Name of Game to Be Added Dynamically"</h3>
     <div class="comment-game-description-container">
@@ -36,12 +40,35 @@
       <div class="comment-game-description-details"> Publisher: <span>"Platform to be filled in dynamically from server"</span></div>
       <div class="comment-game-description-details"> Release - date: <span>"Release - date to be filled in dynamically from server"</span></div>
     </div>
+    <div class="comment-comments-container">
+      <div class="comment-server-comments-container">
+        <h3 class="comment-server-comments-header-text"> COMMENTS ("number of comments to be shown from server")</h3>
+        <div class="comment-server-comments">
+          <p class="comment-individual-server-comment"> 
+            <span>"Time of the comment "</span> 
+            <span> "Author of the comment"</span> 
+            <span>"Actual Comment"</span> 
+          </p>
+          <p class="comment-individual-server-comment"> 
+            <span>"Time of the comment -2 "</span> 
+            <span> "Author of the comment - 2"</span> 
+            <span>"Actual Comment - 2"</span> 
+          </p>
+        </div>
+      </div>
+      <h3 class="comment-comments-form-header-text"> Add a Comment </h3>
+      <form id="comment-add-comment-form" class="comment-add-comment-form" action="submit">
+        <input type="text" placeholder="Your Name" id="commentorsName" class="comment-input-text-name"/>
+        <textarea type="text" placeholder="Your Comment" id="commentorsComment" class="comment-input-text-comment"></textarea>
+        <button type="submit" class="comment-button-submit"> COMMENT </button>
+      </form>
+    </div>
   </div>
+</section>
 
   <footer>
     <p class="footer-text"> Created by Tekle & Alick under "Liscense to be included later" </p>
   </footer>
-  <script src="app.js"></script>
 </body>
 
 </html>
