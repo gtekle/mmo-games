@@ -36,7 +36,7 @@ img {
 }
 
 /* CSS code for Single Page App */
-.body {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -58,16 +58,29 @@ img {
 }
 
 .comment-game-image {
-  width: 80%;
+  width: 60%;
   margin: 10px auto;
   border-radius: 10px;
 }
 
 .comment-name-of-game {
   text-align: center;
+  margin: 15px auto;
+}
+
+.comment-game-description-container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  margin: 0.8rem 5px;
+}
+
+.comment-game-description-details {
+  padding: 5px;
 }
 
 footer {
+  margin-top: auto;
   border: 2px solid black;
   width: 100%;
   text-align: center;
