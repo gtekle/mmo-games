@@ -42,6 +42,32 @@ body {
   min-height: 100vh;
 }
 
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  width: 50%;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: rgb(92, 91, 91);
+}
+
+.nav-link:hover {
+  color: blue;
+}
+
 .comment-pop-up-container {
   display: flex;
   flex-direction: column;
