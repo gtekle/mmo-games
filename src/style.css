@@ -60,6 +60,47 @@ img {
   color: blue;
 }
 
+#main {
+  width: 90%;
+  margin: 16px auto;
+}
+
+#main ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 36px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+  width: 28%;
+  padding: 5px;
+}
+
+.game-title-and-social-activities {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.social-activities {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-activities i {
+  align-self: center;
+  color: red;
+}
+
 footer {
   border: 2px solid black;
   position: absolute;
