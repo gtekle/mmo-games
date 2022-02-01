@@ -1,5 +1,5 @@
 import './style.css';
-import ICON from '../src/assets/img/logo.png';
+import ICON from './assets/img/logo.png';
 
 window.addEventListener('load', () => {
   const logoContainer = document.querySelector('.logo-container');
@@ -7,6 +7,4 @@ window.addEventListener('load', () => {
   logoIcon.src = ICON;
 
   logoContainer.appendChild(logoIcon);
-
-
 });

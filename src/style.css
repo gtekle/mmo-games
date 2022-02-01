@@ -1,5 +1,7 @@
-.body {
-  background-color: rgb(175, 141, 97);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 #header {
