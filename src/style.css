@@ -89,20 +89,88 @@ body {
   border-radius: 10px;
 }
 
+.comment-delete-icon {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
 .comment-name-of-game {
   text-align: center;
   margin: 15px auto;
+  font-weight: 700;
 }
 
 .comment-game-description-container {
   display: grid;
-  text-align: center;
+  /* text-align: center; */
   grid-template-columns: 1fr 1fr;
   margin: 0.8rem 5px;
 }
 
 .comment-game-description-details {
+  margin-left: 15px;
   padding: 5px;
+}
+
+.comment-comments-container {
+  width: 60%;
+  margin: 15px auto;
+  border: 1px solid black;
+}
+
+.comment-server-comments-container {
+  border: 2px solid green;
+  margin: 10px auto 25px;
+}
+
+.comment-individual-server-comment {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.comment-server-comments-header-text {
+  text-align: center;
+  margin: 15px auto;
+  font-weight: 700;
+}
+
+.comment-comments-form-header-text {
+  text-align: center;
+}
+
+.comment-add-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 5px;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.comment-input-text-name {
+  border: 2px solid rgb(85, 82, 82);
+  box-shadow: 2px;
+  height: 1.5rem;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.comment-input-text-comment {
+  border: 2px solid rgb(85, 82, 82);
+  box-shadow: 2px;
+  height: 4rem;
+  width: 50%;
+}
+
+.comment-button-submit {
+
 }
 
 footer {
