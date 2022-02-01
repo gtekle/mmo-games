@@ -34,6 +34,32 @@ img {
   height: auto;
 }
 
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  width: 50%;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: rgb(92, 91, 91);
+}
+
+.nav-link:hover {
+  color: blue;
+}
+
 footer {
   border: 2px solid black;
   position: absolute;
