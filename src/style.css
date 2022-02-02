@@ -103,7 +103,6 @@ body {
 
 .comment-game-description-container {
   display: grid;
-  /* text-align: center; */
   grid-template-columns: 1fr 1fr;
   margin: 0.8rem 5px;
 }
@@ -157,7 +156,7 @@ input {
 .comment-input-text-name {
   border: 2px solid rgb(85, 82, 82);
   border-radius: 10px;
-  box-shadow: 2px;
+  box-shadow: 2px 2px;
   height: 1.5rem;
   width: 50%;
   margin: 10px auto;
@@ -166,13 +165,9 @@ input {
 .comment-input-text-comment {
   border: 2px solid rgb(85, 82, 82);
   border-radius: 10px;
-  box-shadow: 2px;
+  box-shadow: 2px 2px;
   height: 4rem;
   width: 50%;
-}
-
-.comment-button-submit {
-
 }
 
 .comment-popup-section {
