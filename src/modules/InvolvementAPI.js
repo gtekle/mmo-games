@@ -11,7 +11,7 @@ class InvolvementAPI {
       .then((response) => response.json())
       .then((data) => data)
       .catch((error) => error));
-  };
+  }
 
   async getLikes() {
     if (this.appLikes.length === 0) {
@@ -19,7 +19,7 @@ class InvolvementAPI {
     }
 
     return this.appLikes;
-  };
+  }
 }
 
 const involvementApi = new InvolvementAPI();

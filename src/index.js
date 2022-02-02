@@ -15,7 +15,7 @@ window.addEventListener('load', async () => {
 
   gamesApi.games.forEach((game) => {
     if (game.id < 10) {
-      const gameLikes = involvementApi.appLikes.find(item => item.item_id === game.id);
+      const gameLikes = involvementApi.appLikes.find((item) => item.item_id === game.id);
 
       game.likes = gameLikes ? gameLikes.likes : 0;
 
