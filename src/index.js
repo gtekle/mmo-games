@@ -8,6 +8,7 @@ const commentPopUpForm = document.querySelector('#comment-add-comment-form');
 const popUpTrialButton = document.querySelector('#comment-trial-button');
 const commentPopUpSection = document.querySelector('#comment-popup-section');
 const deletePopUpIconElementContainer = document.querySelector('#delete-popup');
+const mainContainer = document.querySelector('#games-list');
 
 commentPopUpForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -16,15 +17,24 @@ commentPopUpForm.addEventListener('submit', (event) => {
 });
 
 popUpTrialButton.addEventListener('click', () => {
-  const deleteIcon = new Image();
-  deleteIcon.src = deletePopUpIcon;
-  deletePopUpIconElementContainer.replaceChildren(deleteIcon);
-  commentPopUpSection.style.display = 'block';
+  // const deleteIcon = new Image();
+  // deleteIcon.src = deletePopUpIcon;
+  // deletePopUpIconElementContainer.replaceChildren(deleteIcon);
+  // commentPopUpSection.style.display = 'block';
   // Implement hiding of other sections to only show pop up content
 });
 
 deletePopUpIconElementContainer.addEventListener('click', () => {
   commentPopUpSection.style.display = 'none';
+});
+
+mainContainer.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn-comments')) {
+    const deleteIcon = new Image();
+    deleteIcon.src = deletePopUpIcon;
+    deletePopUpIconElementContainer.replaceChildren(deleteIcon);
+    commentPopUpSection.style.display = 'block';
+  }
 });
 
 window.addEventListener('load', () => {
@@ -35,8 +45,10 @@ window.addEventListener('load', () => {
   logoContainer.appendChild(logoIcon);
 });
 
-gamesApi.games.forEach((game) => {
-  if (game.id < 10) {
-    renderGame(game);
-  }
-});
+setTimeout(() => {
+  gamesApi.games.forEach((game) => {
+    if (game.id < 10) {
+      renderGame(game);
+    }
+  });
+}, 5000);
