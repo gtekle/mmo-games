@@ -22,25 +22,24 @@
       </ul>
     </nav>
   </header>
-  <h1>MMO Games</h1>
   <button id="comment-trial-button"> Test Button to Bring Comments Pop Up</button>
 
   <!-- Pop Up Comment Section MarkUp (Hidden in initial Load) -->
   <section class="comment-popup-section" id="comment-popup-section">
   <div class="comment-pop-up-container">
     <div class="image-thumbnail-delete-icon-container">
-      <img src="https://www.mmobomb.com/g/1/thumbnail.jpg" alt="game-image-thumbnail" class="comment-game-image">
+      <img id='game-image' src="https://www.mmobomb.com/g/1/thumbnail.jpg" alt="game-image-thumbnail" class="comment-game-image">
       <div id="delete-popup" class="comment-delete-icon"></div>
         <!-- alt="delete-pop-up-icon"  -->
     </div>
-    <h3 class="comment-name-of-game"> "Name of Game to Be Added Dynamically"</h3>
+    <h3 class="comment-name-of-game" id="name-of-game"> "Name of Game to Be Added Dynamically"</h3>
     <div class="comment-game-description-container">
-      <div class="comment-game-description-details"> Short Description: <span>"Short description to be filled in dynamically from server"</span></div>
-      <div class="comment-game-description-details"> Game Url: <span>"Game Url to be filled in dynamically from server"</span></div>
-      <div class="comment-game-description-details"> Genre: <span>"Genre to be filled in dynamically from server"</span></div>
-      <div class="comment-game-description-details"> Platform: <span>"Platform to be filled in dynamically from server"</span></div>
-      <div class="comment-game-description-details"> Publisher: <span>"Platform to be filled in dynamically from server"</span></div>
-      <div class="comment-game-description-details"> Release - date: <span>"Release - date to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Short Description: <span id="short-description">"Short description to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Game Url: <span id="game-url">"Game Url to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Genre: <span id="genre">"Genre to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Platform: <span id="platform">"Platform to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Publisher: <span id="publisher">"Platform to be filled in dynamically from server"</span></div>
+      <div class="comment-game-description-details"> Release - date: <span id="release-date">"Release - date to be filled in dynamically from server"</span></div>
     </div>
     <div class="comment-comments-container">
       <div class="comment-server-comments-container">
@@ -68,9 +67,11 @@
   </div>
 </section>
 
+
+<!-- Main HomePage Section -->
   <main id="main">
     <h1 class="main-section-title">MMO Games</h1>
-    <ul class="games-list">
+    <ul class="games-list" id="games-list">
     </ul>
   </main>
 
