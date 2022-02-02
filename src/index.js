@@ -1,5 +1,7 @@
 import './style.css';
 import ICON from './assets/img/logo.png';
+import gamesApi from './modules/GamesAPI.js';
+import renderGame from './components/GameUI.js';
 import deletePopUpIcon from './assets/img/icons/icons8-delete-64.png';
 
 const commentPopUpForm = document.querySelector('#comment-add-comment-form');
@@ -23,13 +25,18 @@ popUpTrialButton.addEventListener('click', () => {
 
 deletePopUpIconElementContainer.addEventListener('click', () => {
   commentPopUpSection.style.display = 'none';
-})
+});
 
 window.addEventListener('load', () => {
   commentPopUpSection.style.display = 'none';
   const logoContainer = document.querySelector('.logo-container');
   const logoIcon = new Image();
   logoIcon.src = ICON;
-
   logoContainer.appendChild(logoIcon);
+});
+
+gamesApi.games.forEach((game) => {
+  if (game.id < 10) {
+    renderGame(game);
+  }
 });
