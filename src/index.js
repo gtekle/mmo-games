@@ -2,7 +2,9 @@ import './style.css';
 import ICON from './assets/img/logo.png';
 import gamesApi from './modules/GamesAPI.js';
 import renderGame from './components/GameUI.js';
+import renderCommentsPopUp from './components/GameCommentUI.js';
 import deletePopUpIcon from './assets/img/icons/icons8-delete-64.png';
+ 
 
 const commentPopUpForm = document.querySelector('#comment-add-comment-form');
 const popUpTrialButton = document.querySelector('#comment-trial-button');
@@ -16,24 +18,30 @@ commentPopUpForm.addEventListener('submit', (event) => {
   event.target.reset();
 });
 
-popUpTrialButton.addEventListener('click', () => {
-  // const deleteIcon = new Image();
-  // deleteIcon.src = deletePopUpIcon;
-  // deletePopUpIconElementContainer.replaceChildren(deleteIcon);
-  // commentPopUpSection.style.display = 'block';
-  // Implement hiding of other sections to only show pop up content
-});
-
 deletePopUpIconElementContainer.addEventListener('click', () => {
   commentPopUpSection.style.display = 'none';
 });
 
 mainContainer.addEventListener('click', (event) => {
   if (event.target.classList.contains('btn-comments')) {
+    // Add Delete Icon to Pop Up Page
     const deleteIcon = new Image();
     deleteIcon.src = deletePopUpIcon;
     deletePopUpIconElementContainer.replaceChildren(deleteIcon);
     commentPopUpSection.style.display = 'block';
+
+    // Add Info About Games Selected
+    // const gameImageElement = document.querySelector('#game-image');
+    // const nameOfGameElement = document.querySelector('#name-of-game');
+    // const shortGameDescriptionElement = document.querySelector('#short-description');
+    // const gameUrlElement = document.querySelector('#game-url');
+    // const gameGenreElement = document.querySelector('#genre');
+    // const gamePlatformElement = document.querySelector('#platform');
+    // const gamePublisherElement = document.querySelector('#publisher');
+    // const gameReleaseDateElement = document.querySelector('#release-date');
+    const currentGame = gamesApi.getGameById(Number(event.target.id));
+    console.log(currentGame);
+    renderCommentsPopUp(currentGame);
   }
 });
 
