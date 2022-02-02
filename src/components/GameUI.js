@@ -10,7 +10,7 @@ const renderGame = (game) => {
       <p class="game-title">${game.title}</p>
       <div class="social-activities">
         <i class="far fa-heart"></i>
-        <p class="likes-quantity">0 likes</p>
+        <p class="likes-quantity">${game.likes} likes</p>
       </div>
     </div>
     <button class="btn btn-comments" type="button">Comments</button>`;
