@@ -21,6 +21,11 @@ class GamesApi {
       .catch((error) => error));
     return this.games;
   }
+
+  getGameById(gameId) {
+    const filteredGameById = this.games.find((game) => game.id === gameId)
+    return filteredGameById
+  }
 }
 
 const gamesApi = new GamesApi();
