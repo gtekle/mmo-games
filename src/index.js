@@ -4,17 +4,14 @@ import gamesApi from './modules/GamesAPI.js';
 import renderGame from './components/GameUI.js';
 import renderCommentsPopUp from './components/GameCommentUI.js';
 import deletePopUpIcon from './assets/img/icons/icons8-delete-64.png';
- 
 
 const commentPopUpForm = document.querySelector('#comment-add-comment-form');
-const popUpTrialButton = document.querySelector('#comment-trial-button');
 const commentPopUpSection = document.querySelector('#comment-popup-section');
 const deletePopUpIconElementContainer = document.querySelector('#delete-popup');
 const mainContainer = document.querySelector('#games-list');
 
 commentPopUpForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  console.log('test function to make comment call');
+  event.preventDefault(); // console.log('test function to make comment call');
   event.target.reset();
 });
 

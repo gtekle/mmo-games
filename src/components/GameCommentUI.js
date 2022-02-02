@@ -8,7 +8,7 @@ const renderCommentsPopUp = (game) => {
   const gamePublisherElement = document.querySelector('#publisher');
   const gameReleaseDateElement = document.querySelector('#release-date');
   const gameDeveloperElement = document.querySelector('#game-developer');
-  
+
   gameImageElement.src = game.thumbnail;
   nameOfGameElement.innerHTML = game.title;
   shortGameDescriptionElement.innerHTML = game.short_description;

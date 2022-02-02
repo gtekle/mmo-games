@@ -23,8 +23,8 @@ class GamesApi {
   }
 
   getGameById(gameId) {
-    const filteredGameById = this.games.find((game) => game.id === gameId)
-    return filteredGameById
+    const filteredGameById = this.games.find((game) => game.id === gameId);
+    return filteredGameById;
   }
 }
 
