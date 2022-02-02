@@ -49,7 +49,11 @@ body {
 }
 
 .nav-menu {
-  width: 50%;
+  width: 70%;
+}
+
+.logo-container {
+  width: 30%;
 }
 
 .nav-list {
@@ -170,7 +174,11 @@ input {
 }
 
 .comment-button-submit {
-  
+
+}
+
+.comment-popup-section {
+  display: none;
 }
 
 #main {
