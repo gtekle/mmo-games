@@ -31,7 +31,7 @@ commentPopUpSectionElement.addEventListener('submit', async (event) => {
   } catch (error) {
     gameComments = [];
   }
-  populateComments(gameComments);
+  populateComments(gameComments, involvementApi.commentsCounter);
 });
 
 commentPopUpSectionElement.addEventListener('click', (event) => {
@@ -53,7 +53,7 @@ mainContainer.addEventListener('click', async (event) => {
     }
     commentPopUpSectionElement.style.display = 'block';
     renderCommentsPopUp(currentGame);
-    populateComments(gameComments);
+    populateComments(gameComments, involvementApi.commentsCounter);
   }
 });
 

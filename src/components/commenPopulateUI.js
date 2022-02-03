@@ -1,5 +1,7 @@
-const populateComments = (commentsArray) => {
+const populateComments = (commentsArray, numberOfComments = 0) => {
   const commentsContainerElement = document.querySelector('#comments-container');
+  const commentnumberHeadingElement = document.querySelector('#comment-number');
+  commentnumberHeadingElement.innerHTML = `COMMENTS (${numberOfComments})`
   commentsContainerElement.innerHTML = '';
   if (commentsArray.length > 0) {
     commentsArray.forEach((element) => {
