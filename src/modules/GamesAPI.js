@@ -3,18 +3,17 @@ import API_KEY from '../../config.js';
 const GAMES_API_BASE_URL = 'https://mmo-games.p.rapidapi.com';
 const HOST = 'mmo-games.p.rapidapi.com';
 
-class GamesApi {
-  static pageNumber = 0;
+// export let static pageNumber = 0;
 
+class GamesApi {
   constructor() {
     this.games = [];
+    this.pageNumber = 0;
   }
 
   getNumberOfGames() { return this.games.length; }
 
   async getGames() {
-    this.pageNumber = 0;
-
     this.games.push(...await fetch(`${GAMES_API_BASE_URL}/games`,
       {
         headers: {

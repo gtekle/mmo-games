@@ -52,7 +52,13 @@ body {
   color: rgb(80, 77, 77);
 }
 
-.btn:hover {
+.btn:disabled {
+  cursor: default;
+  background-color: rgb(209, 201, 201);
+  color: grey;
+}
+
+.btn:hover:not([disabled]) {
   background-color: rgb(219, 217, 217);
   color: blue;
 }
