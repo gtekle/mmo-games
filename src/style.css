@@ -185,6 +185,13 @@ input {
   padding: 5px;
 }
 
+#server-message-prompt {
+  display: none;
+  border: 2px solid green;
+  padding: 4px;
+  border-radius: 8px;
+}
+
 #comment-gameID {
   display: none;
 }
