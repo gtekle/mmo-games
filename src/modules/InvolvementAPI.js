@@ -46,7 +46,7 @@ class InvolvementAPI {
       const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments`, requestOptions);
       responseStatus = response.status;
     } catch (error) {
-      console.log(error);
+      responseStatus = error;
     }
     return responseStatus;
   }
