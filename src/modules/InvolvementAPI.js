@@ -25,7 +25,7 @@ class InvolvementAPI {
       const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
       dataJson = await data.json();
     } catch (error) {
-      console.log(error);
+      dataJson = error;
     }
     return dataJson;
   }
