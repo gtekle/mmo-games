@@ -27,6 +27,5 @@ class GamesApi {
 }
 
 const gamesApi = new GamesApi();
-gamesApi.getGames();
 
 export default gamesApi;

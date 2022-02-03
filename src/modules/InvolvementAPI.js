@@ -1,7 +1,6 @@
 class InvolvementAPI {
   constructor() {
     this.appLikes = [];
-    this.appComments = [];
   }
 
   async fetchLikes() {
