@@ -27,7 +27,7 @@ commentPopUpSectionElement.addEventListener('submit', async (event) => {
   }
   event.target.reset();
   try {
-    gameComments = await involvementApi.fetchCommentById(gameIdSelected);
+    gameComments = await involvementApi.getCommentsById(gameIdSelected);
   } catch (error) {
     gameComments = [];
   }
@@ -47,7 +47,8 @@ mainContainer.addEventListener('click', async (event) => {
     const currentGame = gamesApi.getGameById(Number(event.target.id / 100));
     let gameComments = [];
     try {
-      gameComments = await involvementApi.fetchCommentById(currentGame.id);
+      gameComments = await involvementApi.getCommentsById(currentGame.id);
+      console.log(gameComments);
     } catch (error) {
       gameComments = [];
     }
