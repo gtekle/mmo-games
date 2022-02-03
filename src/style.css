@@ -224,6 +224,17 @@ input {
   padding: 5px;
 }
 
+.comment-button-submit {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid rgb(147, 147, 189);
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: rgb(80, 77, 77);
+}
+
 #server-message-prompt {
   display: none;
   border: 2px solid green;
