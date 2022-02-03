@@ -4,18 +4,24 @@ import gamesApi from './modules/GamesAPI.js';
 import involvementApi from './modules/InvolvementAPI.js';
 import renderGame from './components/GameUI.js';
 import renderCommentsPopUp from './components/GameCommentUI.js';
+import renderServerMessage from './components/serverMessageUI';
 
 const commentPopUpSectionElement = document.querySelector('#comment-popup-section');
 const mainContainerElement = document.querySelector('#main');
 const mainContainer = document.querySelector('#games-list');
 
-commentPopUpForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // console.log('test function to make comment call');
-  const gameIdSelected = document.querySelector('#comment-gameID').innerHTML;
-  const result = involvementApi.postCommentByItemId(
+commentPopUpSectionElement.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const gameIdSelected = event.target.elements[2].id;
+  const result = await involvementApi.postCommentByItemId(
     gameIdSelected, event.target.elements[0].value, event.target.elements[1].value,
-  ); // 'username: ',  , 'comment',  );
-  console.log(result);
+  );
+  const serverMessageContaier = document.querySelector('#server-message-prompt');
+  if (result === 201) {
+    renderServerMessage(serverMessageContaier, 'comment posted succesfully', 3500);
+  } else {
+    renderServerMessage(serverMessageContaier, 'comment failed to be posted. Please refresh & try again', 3500);
+  }
   event.target.reset();
 });
 
@@ -54,3 +60,4 @@ window.addEventListener('load', async () => {
       renderGame(game);
     }
   });
+});
