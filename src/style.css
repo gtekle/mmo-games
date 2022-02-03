@@ -1,3 +1,4 @@
+/* Basic CSS reset */
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -34,6 +35,13 @@ img {
   height: auto;
 }
 
+/* CSS code for Single Page App */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -58,6 +66,121 @@ img {
 
 .nav-link:hover {
   color: blue;
+}
+
+.comment-popup-section {
+  display: none;
+  font-family: Georgia, serif;
+}
+
+.comment-pop-up-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid black;
+  border-radius: 40px;
+  margin: 1rem 1rem;
+}
+
+.image-thumbnail-delete-icon-container {
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+}
+
+.comment-game-image {
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.comment-delete-icon {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+
+.comment-game-short-description-details {
+  margin: 10px auto;
+  width: 80%;
+  font-size: 1rem;
+}
+
+.comment-name-of-game {
+  text-align: center;
+  margin: 10px auto;
+  font-weight: 700;
+}
+
+.comment-game-description-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60%;
+  margin: 10px auto;
+  font-size: 0.8rem;
+}
+
+.comment-game-description-details {
+  margin-left: 15px;
+  padding: 5px;
+}
+
+.comment-comments-container {
+  width: 60%;
+  margin: 15px auto;
+  border: 1px solid black;
+}
+
+.comment-server-comments-container {
+  border: 2px solid green;
+  margin: 10px auto 25px;
+}
+
+.comment-individual-server-comment {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.comment-server-comments-header-text {
+  text-align: center;
+  margin: 15px auto;
+  font-weight: 700;
+}
+
+.comment-comments-form-header-text {
+  text-align: center;
+}
+
+.comment-add-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 5px;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.comment-input-text-name {
+  border: 2px solid rgb(85, 82, 82);
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  height: 1.5rem;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.comment-input-text-comment {
+  border: 2px solid rgb(85, 82, 82);
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  height: 4rem;
+  width: 50%;
 }
 
 #main {
@@ -102,9 +225,8 @@ img {
 }
 
 footer {
+  margin-top: auto;
   border: 2px solid black;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   text-align: center;
   padding: 5px;
