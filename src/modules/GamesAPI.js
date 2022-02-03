@@ -4,11 +4,17 @@ const GAMES_API_BASE_URL = 'https://mmo-games.p.rapidapi.com';
 const HOST = 'mmo-games.p.rapidapi.com';
 
 class GamesApi {
+  static pageNumber = 0;
+
   constructor() {
     this.games = [];
   }
 
+  getNumberOfGames() { return this.games.length }
+
   async getGames() {
+    this.pageNumber = 0;
+
     this.games.push(...await fetch(`${GAMES_API_BASE_URL}/games`,
       {
         headers: {
@@ -19,6 +25,7 @@ class GamesApi {
       .then((response) => response.json())
       .then((data) => data)
       .catch((error) => error));
+
     return this.games;
   }
 

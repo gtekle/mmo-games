@@ -35,33 +35,68 @@ img {
   height: auto;
 }
 
-/* CSS code for Single Page App */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgb(147, 147, 189);
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: rgb(80, 77, 77);
+}
+
+.btn:hover {
+  background-color: rgb(219, 217, 217);
+  color: blue;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 5%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+}
+
+.logo-container a {
+  align-self:flex-end;
+  padding: 5px 0;
 }
 
 .nav-menu {
-  width: 50%;
+  width: 65%;
+  align-self: flex-end;
 }
 
 .nav-list {
   display: flex;
   list-style: none;
-  justify-content: space-around;
+  justify-content: flex-end;
+  padding-right: 14%;
+}
+
+.nav-item + .nav-item {
+  margin-left: 36px;
 }
 
 .nav-link {
   text-decoration: none;
   font-size: 24px;
-  color: rgb(92, 91, 91);
+  color: #474747;
+  padding: 0;
 }
 
 .nav-link:hover {
@@ -184,7 +219,7 @@ input {
 }
 
 #main {
-  width: 90%;
+  width: 80%;
   margin: 16px auto;
 }
 
@@ -198,6 +233,7 @@ input {
 .game {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 36px;
   width: 28%;
   padding: 5px;
@@ -222,6 +258,17 @@ input {
 .social-activities i {
   align-self: center;
   color: red;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-previous,
+.btn-next {
+  padding: 5px;
 }
 
 footer {
