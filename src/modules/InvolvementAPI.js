@@ -4,15 +4,36 @@ const fetchCommentById = async (gameId) => {
     const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
     dataJson = await data.json();
   } catch (error) {
-    dataJson = error;
+    dataJson = error.status;
   }
   return dataJson;
+};
+
+const postCommentByItemId = async (gameId, username, comment) => {
+  let responseStatus;
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      item_id: gameId,
+      username,
+      comment,
+    }),
+  };
+  try {
+    const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments`, requestOptions);
+    responseStatus = response.status;
+  } catch (error) {
+    responseStatus = error;
+  }
+  return responseStatus;
 };
 
 class InvolvementAPI {
   constructor() {
     this.appLikes = [];
     this.comments = [];
+    this.currentResponseStatus = [];
   }
 
   async fetchLikes() {
@@ -49,32 +70,16 @@ class InvolvementAPI {
             comments: result,
           });
         } catch (error) {
-          result = error;
+          result = error.status;
         }
       }
     }
     return result;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  async postCommentByItemId(gameId, username, comment) {
-    let responseStatus;
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        item_id: gameId,
-        username,
-        comment,
-      }),
-    };
-    try {
-      const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments`, requestOptions);
-      responseStatus = response.status;
-    } catch (error) {
-      responseStatus = error;
-    }
-    return responseStatus;
+  async postCommentByItemId(gameId, username, comment) { 
+    this.currentResponseStatus = await postCommentByItemId(gameId, username, comment);
+    return this.currentResponseStatus;
   }
 }
 
