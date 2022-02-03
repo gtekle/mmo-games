@@ -18,7 +18,8 @@ class InvolvementAPI {
     return this.appLikes;
   }
 
-  static async fetchCommentsById(gameId) {
+  // eslint-disable-next-line class-methods-use-this
+  async fetchCommentById(gameId) {
     let dataJson;
     try {
       const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
@@ -29,7 +30,9 @@ class InvolvementAPI {
     return dataJson;
   }
 
-  static async postCommentByItemId(gameId, username, comment) {
+  // eslint-disable-next-line class-methods-use-this
+  async postCommentByItemId(gameId, username, comment) {
+    let responseStatus;
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -39,8 +42,13 @@ class InvolvementAPI {
         comment,
       }),
     };
-    const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`, requestOptions);
-    return response;
+    try {
+      const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments`, requestOptions);
+      responseStatus = response.status;
+    } catch (error) {
+      console.log(error);
+    }
+    return responseStatus;
   }
 }
 
