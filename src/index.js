@@ -3,47 +3,36 @@ import ICON from './assets/img/logo.png';
 import gamesApi from './modules/GamesAPI.js';
 import renderGame from './components/GameUI.js';
 import renderCommentsPopUp from './components/GameCommentUI.js';
-import deletePopUpIcon from './assets/img/icons/icons8-delete-64.png';
 
-const commentPopUpForm = document.querySelector('#comment-add-comment-form');
-const commentPopUpSection = document.querySelector('#comment-popup-section');
-const deletePopUpIconElementContainer = document.querySelector('#delete-popup');
+const commentPopUpSectionElement = document.querySelector('#comment-popup-section');
+const mainContainerElement = document.querySelector('#main');
 const mainContainer = document.querySelector('#games-list');
 
-commentPopUpForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // console.log('test function to make comment call');
-  event.target.reset();
+commentPopUpSectionElement.addEventListener('submit', (event) => {
+  if (event.targert.id === 'comment-add-comment-form') {
+    event.preventDefault();
+    event.target.reset();
+  }
 });
 
-deletePopUpIconElementContainer.addEventListener('click', () => {
-  commentPopUpSection.style.display = 'none';
+commentPopUpSectionElement.addEventListener('click', (event) => {
+  if (event.target.id === 'delete-popup') {
+    commentPopUpSectionElement.style.display = 'none';
+    mainContainerElement.style.display = 'block';
+  }
 });
 
 mainContainer.addEventListener('click', (event) => {
   if (event.target.classList.contains('btn-comments')) {
-    // Add Delete Icon to Pop Up Page
-    const deleteIcon = new Image();
-    deleteIcon.src = deletePopUpIcon;
-    deletePopUpIconElementContainer.replaceChildren(deleteIcon);
-    commentPopUpSection.style.display = 'block';
-
-    // Add Info About Games Selected
-    // const gameImageElement = document.querySelector('#game-image');
-    // const nameOfGameElement = document.querySelector('#name-of-game');
-    // const shortGameDescriptionElement = document.querySelector('#short-description');
-    // const gameUrlElement = document.querySelector('#game-url');
-    // const gameGenreElement = document.querySelector('#genre');
-    // const gamePlatformElement = document.querySelector('#platform');
-    // const gamePublisherElement = document.querySelector('#publisher');
-    // const gameReleaseDateElement = document.querySelector('#release-date');
-    const currentGame = gamesApi.getGameById(Number(event.target.id));
-    console.log(currentGame);
+    commentPopUpSectionElement.style.display = 'block';
+    mainContainerElement.style.display = 'none';
+    const currentGame = gamesApi.getGameById(Number(event.target.id / 100));
     renderCommentsPopUp(currentGame);
   }
 });
 
 window.addEventListener('load', () => {
-  commentPopUpSection.style.display = 'none';
+  commentPopUpSectionElement.style.display = 'none';
   const logoContainer = document.querySelector('.logo-container');
   const logoIcon = new Image();
   logoIcon.src = ICON;
