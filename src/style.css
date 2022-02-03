@@ -128,11 +128,9 @@ body {
 .comment-comments-container {
   width: 60%;
   margin: 15px auto;
-  border: 1px solid black;
 }
 
 .comment-server-comments-container {
-  border: 2px solid green;
   margin: 10px auto 25px;
 }
 
