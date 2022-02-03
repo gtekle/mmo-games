@@ -34,6 +34,7 @@ class InvolvementAPI {
     this.appLikes = [];
     this.comments = [];
     this.currentResponseStatus = [];
+    this.commentsCounter = 0;
   }
 
   async fetchLikes() {
@@ -74,12 +75,22 @@ class InvolvementAPI {
         }
       }
     }
+    this.getCommentCounter(result);
     return result;
   }
 
   async postCommentByItemId(gameId, username, comment) {
     this.currentResponseStatus = await postCommentByItemId(gameId, username, comment);
     return this.currentResponseStatus;
+  }
+
+  getCommentCounter = (currentCommentsOfSelectedGame) => {
+    if (!(Array.isArray(currentCommentsOfSelectedGame))) {
+      this.commentsCounter = 0;
+    } else {
+      this.commentsCounter = currentCommentsOfSelectedGame.length;
+    }
+    return this.commentsCounter;
   }
 }
 
