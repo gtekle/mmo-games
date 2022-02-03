@@ -22,17 +22,7 @@ const renderCommentsPopUp = (game) => {
     <div class="comment-comments-container">
       <div class="comment-server-comments-container">
         <h3 class="comment-server-comments-header-text"> COMMENTS ("number of comments to be shown from server")</h3>
-        <div class="comment-server-comments">
-          <p class="comment-individual-server-comment"> 
-            <span>"Time of the comment "</span> 
-            <span> "Author of the comment"</span> 
-            <span>"Actual Comment"</span> 
-          </p>
-          <p class="comment-individual-server-comment"> 
-            <span>"Time of the comment -2 "</span> 
-            <span> "Author of the comment - 2"</span> 
-            <span>"Actual Comment - 2"</span> 
-          </p>
+        <div id="comments-container" class="comment-server-comments">
         </div>
       </div>
       <h3 class="comment-comments-form-header-text"> Add a Comment </h3>
