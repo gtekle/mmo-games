@@ -1,7 +1,7 @@
-import renderGames from "../modules/RenderGames.js";
-import gamesApi from "../modules/GamesAPI.js";
+import renderGames from '../modules/RenderGames.js';
+import gamesApi from '../modules/GamesAPI.js';
 
-let pageNumber = gamesApi.pageNumber;
+let { pageNumber } = gamesApi;
 
 const renderPagination = () => {
   const mainSection = document.querySelector('#main');
@@ -25,7 +25,8 @@ const renderPagination = () => {
   btnNext.addEventListener('click', () => {
     const gameListContainer = document.querySelector('.games-list');
     gameListContainer.innerHTML = '';
-    pageNumber = (pageNumber + 1) < (gamesApi.getNumberOfGames() / 15) ? pageNumber + 1 : gamesApi.getNumberOfGames / 15;
+    pageNumber = (pageNumber + 1) < (gamesApi.getNumberOfGames() / 15)
+      ? pageNumber + 1 : gamesApi.getNumberOfGames / 15;
     pageNumberLabel.textContent = ` - ${pageNumber + 1} -`;
     renderGames(pageNumber);
   });
@@ -37,6 +38,6 @@ const renderPagination = () => {
     pageNumberLabel.textContent = `- ${pageNumber + 1} -`;
     renderGames(pageNumber);
   });
-}
+};
 
 export default renderPagination;

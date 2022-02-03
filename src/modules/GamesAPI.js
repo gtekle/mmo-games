@@ -10,7 +10,7 @@ class GamesApi {
     this.games = [];
   }
 
-  getNumberOfGames() { return this.games.length }
+  getNumberOfGames() { return this.games.length; }
 
   async getGames() {
     this.pageNumber = 0;
