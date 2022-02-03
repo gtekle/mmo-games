@@ -40,6 +40,7 @@ const renderCommentsPopUp = (game) => {
         <input type="text" placeholder="Your Name" id="commentorsName" class="comment-input-text-name"/>
         <textarea placeholder="Your Comment" id="commentorsComment" class="comment-input-text-comment"></textarea>
         <button id=${game.id} type="submit" class="comment-button-submit"> COMMENT </button>
+        <span id="server-message-prompt">  </span>
       </form>
     </div>`;
 };
