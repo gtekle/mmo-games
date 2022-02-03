@@ -68,6 +68,11 @@ body {
   color: blue;
 }
 
+.comment-popup-section {
+  display: none;
+  font-family: Georgia, serif;
+}
+
 .comment-pop-up-container {
   display: flex;
   flex-direction: column;
@@ -80,11 +85,11 @@ body {
 
 .image-thumbnail-delete-icon-container {
   display: grid;
-  grid-template-columns: 10fr 2fr;
+  grid-template-columns: 15fr 1fr;
 }
 
 .comment-game-image {
-  width: 60%;
+  width: 30%;
   margin: 10px auto;
   border-radius: 10px;
 }
@@ -95,16 +100,24 @@ body {
   border-radius: 30px;
 }
 
+.comment-game-short-description-details {
+  margin: 10px auto;
+  width: 80%;
+  font-size: 1rem;
+}
+
 .comment-name-of-game {
   text-align: center;
-  margin: 15px auto;
+  margin: 10px auto;
   font-weight: 700;
 }
 
 .comment-game-description-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0.8rem 5px;
+  width: 60%;
+  margin: 10px auto;
+  font-size: 0.8rem;
 }
 
 .comment-game-description-details {
@@ -168,10 +181,6 @@ input {
   box-shadow: 2px 2px;
   height: 4rem;
   width: 50%;
-}
-
-.comment-popup-section {
-  display: none;
 }
 
 #main {

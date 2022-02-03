@@ -13,7 +13,7 @@ const renderGame = (game) => {
         <p class="likes-quantity">0 likes</p>
       </div>
     </div>
-    <button class="btn btn-comments" type="button" id=${game.id}>Comments</button>`;
+    <button class="btn btn-comments" type="button" id=${game.id * 100}>Comments</button>`;
 
   gameListContainer.appendChild(listItem);
 };
