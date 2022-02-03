@@ -4,7 +4,10 @@ const HOST = 'mmo-games.p.rapidapi.com';
 class GamesApi {
   constructor() {
     this.games = [];
+    this.pageNumber = 0;
   }
+
+  getNumberOfGames() { return this.games.length; }
 
   async getGames() {
     this.games.push(...await fetch(`${GAMES_API_BASE_URL}/games`,
@@ -17,6 +20,7 @@ class GamesApi {
       .then((response) => response.json())
       .then((data) => data)
       .catch((error) => error));
+
     return this.games;
   }
 
