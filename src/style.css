@@ -70,8 +70,7 @@ body {
 
 .comment-popup-section {
   display: none;
-  font-family: Georgia;
-  /* height: 90%; */
+  font-family: Georgia, serif;
 }
 
 .comment-pop-up-container {
