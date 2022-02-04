@@ -4,17 +4,34 @@ import gamesApi from './modules/GamesAPI.js';
 import involvementApi from './modules/InvolvementAPI.js';
 import renderGames from './modules/RenderGames.js';
 import renderCommentsPopUp from './components/GameCommentUI.js';
+import populateComments from './components/commenPopulateUI.js';
+import renderServerMessage from './components/serverMessageUI.js';
 import renderPagination from './components/PaginationUI.js';
 
 const commentPopUpSectionElement = document.querySelector('#comment-popup-section');
 const mainContainerElement = document.querySelector('#main');
 const mainContainer = document.querySelector('#games-list');
 
-commentPopUpSectionElement.addEventListener('submit', (event) => {
-  if (event.targert.id === 'comment-add-comment-form') {
-    event.preventDefault();
-    event.target.reset();
+commentPopUpSectionElement.addEventListener('submit', async (event) => {
+  let gameComments = [];
+  event.preventDefault();
+  const gameIdSelected = event.target.elements[2].id;
+  const result = await involvementApi.postCommentByItemId(
+    gameIdSelected, event.target.elements[0].value, event.target.elements[1].value,
+  );
+  const serverMessageContaier = document.querySelector('#server-message-prompt');
+  if (result === 201) {
+    renderServerMessage(serverMessageContaier, 'comment posted succesfully', 3500);
+  } else {
+    renderServerMessage(serverMessageContaier, 'comment failed to be posted. Please refresh & try again', 3500);
   }
+  event.target.reset();
+  try {
+    gameComments = await involvementApi.fetchCommentById(gameIdSelected);
+  } catch (error) {
+    gameComments = [];
+  }
+  populateComments(gameComments);
 });
 
 commentPopUpSectionElement.addEventListener('click', (event) => {
@@ -24,12 +41,19 @@ commentPopUpSectionElement.addEventListener('click', (event) => {
   }
 });
 
-mainContainer.addEventListener('click', (event) => {
+mainContainer.addEventListener('click', async (event) => {
   if (event.target.classList.contains('btn-comments')) {
-    commentPopUpSectionElement.style.display = 'block';
     mainContainerElement.style.display = 'none';
     const currentGame = gamesApi.getGameById(Number(event.target.id / 100));
+    let gameComments = [];
+    try {
+      gameComments = await involvementApi.fetchCommentById(currentGame.id);
+    } catch (error) {
+      gameComments = [];
+    }
+    commentPopUpSectionElement.style.display = 'block';
     renderCommentsPopUp(currentGame);
+    populateComments(gameComments);
   }
 });
 
@@ -49,7 +73,6 @@ window.addEventListener('load', async () => {
   totalGamesLink.appendChild(numberOfGames);
   logoContainer.appendChild(logoIcon);
   logoContainer.appendChild(totalGamesLink);
-
   renderGames(gamesApi.pageNumber);
   renderPagination();
 });

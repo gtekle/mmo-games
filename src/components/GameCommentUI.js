@@ -22,24 +22,15 @@ const renderCommentsPopUp = (game) => {
     <div class="comment-comments-container">
       <div class="comment-server-comments-container">
         <h3 class="comment-server-comments-header-text"> COMMENTS ("number of comments to be shown from server")</h3>
-        <div class="comment-server-comments">
-          <p class="comment-individual-server-comment"> 
-            <span>"Time of the comment "</span> 
-            <span> "Author of the comment"</span> 
-            <span>"Actual Comment"</span> 
-          </p>
-          <p class="comment-individual-server-comment"> 
-            <span>"Time of the comment -2 "</span> 
-            <span> "Author of the comment - 2"</span> 
-            <span>"Actual Comment - 2"</span> 
-          </p>
+        <div id="comments-container" class="comment-server-comments">
         </div>
       </div>
       <h3 class="comment-comments-form-header-text"> Add a Comment </h3>
       <form id="comment-add-comment-form" class="comment-add-comment-form" action="submit">
-        <input type="text" placeholder="Your Name" id="commentorsName" class="comment-input-text-name"/>
-        <textarea placeholder="Your Comment" id="commentorsComment" class="comment-input-text-comment"></textarea>
-        <button type="submit" class="comment-button-submit"> COMMENT </button>
+        <input required type="text" placeholder="Your Name" id="commentorsName" class="comment-input-text-name"/>
+        <textarea required placeholder="Your Comment" id="commentorsComment" class="comment-input-text-comment"></textarea>
+        <button id=${game.id} type="submit" class="comment-button-submit"> COMMENT </button>
+        <span id="server-message-prompt">  </span>
       </form>
     </div>`;
 };
