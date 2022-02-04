@@ -288,6 +288,10 @@ input {
   color: red;
 }
 
+.fa-heart {
+  cursor: pointer;
+}
+
 .pagination-container {
   display: flex;
   justify-content: space-between;
