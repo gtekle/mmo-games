@@ -5,7 +5,9 @@ const renderGame = (game) => {
   listItem.classList.add('game');
   listItem.id = game.id;
   listItem.innerHTML = `
-    <img src=${game.thumbnail} alt="game thumbnail image">
+    <a href=${game.game_url}>
+      <img src=${game.thumbnail} alt="game thumbnail image">
+    </a>
     <div class="game-title-and-social-activities">
       <p class="game-title">${game.title}</p>
       <div class="social-activities">

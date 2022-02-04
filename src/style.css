@@ -288,6 +288,10 @@ input {
   color: red;
 }
 
+.fa-heart {
+  cursor: pointer;
+}
+
 .pagination-container {
   display: flex;
   justify-content: space-between;
@@ -305,4 +309,20 @@ footer {
   width: 100%;
   text-align: center;
   padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-container {
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .game {
+    margin-bottom: 36px;
+    width: 100%;
+    padding: 5px;
+  }
 }

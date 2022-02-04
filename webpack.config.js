@@ -23,7 +23,7 @@ module.exports = {
       title: 'mmo games',
       template: './src/index.html',
     }),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
   ],
   module: {
     rules: [
