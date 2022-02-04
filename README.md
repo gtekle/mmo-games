@@ -2,7 +2,7 @@
 
 ## Description
 
-> MMO Games is an appw we built using vanilla JavaScript,Webpack and ES6 features, notably modules. The project consumes data from the mmo games API using JavaScript async and await. It is [live here]() for a demo of the project. The user is able to see a list of games. The user is also able to post comments using the InvolvementAPI and view all other comments posted by other users. 
+> MMO Games is a web app, built using vanilla JavaScript, Webpack and ES6 features, notably modules. The project consumes data from the mmo games API using JavaScript async and await fetchAPI. It is [live here]() for a demo of the project. The user is able to see a list of games. The user is also able to post comments using the InvolvementAPI and view all other comments posted by other users. 
 
 
 ## Built With
@@ -29,7 +29,7 @@ To get the content of this project locally you need to run this command in your 
 
 - ` git clone https://github.com/gtekle/mmo-games.git`
 
-You need to then install the packages locally to your systeme by running: 
+You need to then install the packages locally to your system by running: 
 
  > npm install 
 
@@ -60,16 +60,15 @@ For tracking linter errors locally you need to follow these steps:
 
 ## 👤 Author
 
-
 👤 **Alick Nyirenda**
 - GitHub: [@githubhandle](https://github.com/Beardless-sheik)
 - Twitter: [@twitterhandle](https://twitter.com/Beardless_Sheik)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/alick-nyirenda/)
 
 👤 **Tekle Gebreyohannes**
-- GitHub: [@githubhandle]()
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+- GitHub: [@gtekle](https://github.com/gtekle)
+- Twitter: [@teklegyohannes](https://twitter.com/teklegyohannes)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tekle-gebreyohannes-kidanemariam-7605752b)
 
 ## :handshake: Contributing
 
