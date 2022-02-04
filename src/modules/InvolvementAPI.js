@@ -77,7 +77,7 @@ class InvolvementAPI {
     return result;
   }
 
-  async postCommentByItemId(gameId, username, comment) {
+  async postCommentByItemId(gameId, username, comment) { 
     this.currentResponseStatus = await postCommentByItemId(gameId, username, comment);
     return this.currentResponseStatus;
   }
