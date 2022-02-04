@@ -1,18 +1,6 @@
-const fetchCommentById = async (gameId) => {
-  let dataJson;
-  try {
-    const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
-    dataJson = await data.json();
-  } catch (error) {
-    dataJson = error;
-  }
-  return dataJson;
-};
-
 class InvolvementAPI {
   constructor() {
     this.appLikes = [];
-    this.comments = [];
   }
 
   async fetchLikes() {
@@ -30,30 +18,16 @@ class InvolvementAPI {
     return this.appLikes;
   }
 
-  async getCommentsById(gameId) {
-    let result = [];
-    if (this.comments.length >= 0) {
-      let checkData;
-      this.comments.forEach((element) => {
-        if (element.item_id === gameId) {
-          checkData = element.comments;
-        }
-      });
-      if (checkData) {
-        result = checkData;
-      } else {
-        try {
-          result = await fetchCommentById(gameId);
-          this.comments.push({
-            item_id: gameId,
-            comments: result,
-          });
-        } catch (error) {
-          result = error;
-        }
-      }
+  // eslint-disable-next-line class-methods-use-this
+  async fetchCommentById(gameId) {
+    let dataJson;
+    try {
+      const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
+      dataJson = await data.json();
+    } catch (error) {
+      dataJson = error;
     }
-    return result;
+    return dataJson;
   }
 
   // eslint-disable-next-line class-methods-use-this
