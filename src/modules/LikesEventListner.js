@@ -1,8 +1,8 @@
-import involvementApi from "./InvolvementAPI.js";
+import involvementApi from './InvolvementAPI.js';
 
 const likeButtonEventListner = () => {
   const btnLikes = document.querySelectorAll('.fa-heart');
-  btnLikes.forEach(btnLike => {
+  btnLikes.forEach((btnLike) => {
     btnLike.addEventListener('click', async (event) => {
       event.stopImmediatePropagation();
 
@@ -12,7 +12,7 @@ const likeButtonEventListner = () => {
       await involvementApi.postLike(itemId);
       await involvementApi.fetchLikes();
 
-      const targetGame = involvementApi.appLikes.find(game => game.item_id === parseInt(itemId, 10));
+      const targetGame = involvementApi.appLikes.find((game) => game.item_id === itemId);
 
       if (currentGameItem.children[1].children[1].children[1].textContent === '0 likes') {
         currentGameItem.children[1].children[1].children[1].textContent = `${targetGame.likes} likes`;
@@ -21,6 +21,6 @@ const likeButtonEventListner = () => {
       }
     });
   });
-}
+};
 
 export default likeButtonEventListner;

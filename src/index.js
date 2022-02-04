@@ -42,6 +42,22 @@ commentPopUpSectionElement.addEventListener('click', (event) => {
   }
 });
 
+mainContainer.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('btn-comments')) {
+    mainContainerElement.style.display = 'none';
+    const currentGame = gamesApi.getGameById(Number(event.target.id / 100));
+    let gameComments = [];
+    try {
+      gameComments = await involvementApi.fetchCommentById(currentGame.id);
+    } catch (error) {
+      gameComments = [];
+    }
+    commentPopUpSectionElement.style.display = 'block';
+    renderCommentsPopUp(currentGame);
+    populateComments(gameComments, involvementApi.commentsCounter);
+  }
+});
+
 window.addEventListener('load', async () => {
   commentPopUpSectionElement.style.display = 'none';
   const logoContainer = document.querySelector('.logo-container');
