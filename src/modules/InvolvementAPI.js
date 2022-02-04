@@ -21,8 +21,7 @@ class InvolvementAPI {
     };
 
     try {
-      const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/likes`, requestOptions)
-        .catch((error) => error);
+      const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/likes`, requestOptions);
       this.responseStatus = response.status;
     } catch (error) {
       this.responseStatus = error;
