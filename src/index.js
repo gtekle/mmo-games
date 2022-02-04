@@ -48,6 +48,7 @@ mainContainer.addEventListener('click', async (event) => {
     let gameComments = [];
     try {
       gameComments = await involvementApi.getCommentsById(currentGame.id);
+      console.log(gameComments);
     } catch (error) {
       gameComments = [];
     }
