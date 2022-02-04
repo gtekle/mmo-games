@@ -1,6 +1,8 @@
 class InvolvementAPI {
   constructor() {
     this.appLikes = [];
+    this.comments = [];
+    this.responseStatus = 200;
   }
 
   async fetchLikes() {
@@ -18,21 +20,17 @@ class InvolvementAPI {
     return this.appLikes;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async fetchCommentById(gameId) {
-    let dataJson;
     try {
       const data = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments?item_id=${gameId}`);
-      dataJson = await data.json();
+      this.comments = await data.json();
     } catch (error) {
-      dataJson = error;
+      this.comments = error;
     }
-    return dataJson;
+    return this.comments;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async postCommentByItemId(gameId, username, comment) {
-    let responseStatus;
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -44,11 +42,11 @@ class InvolvementAPI {
     };
     try {
       const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/comments`, requestOptions);
-      responseStatus = response.status;
+      this.responseStatus = response.status;
     } catch (error) {
-      responseStatus = error;
+      this.responseStatus = error;
     }
-    return responseStatus;
+    return this.responseStatus;
   }
 }
 
