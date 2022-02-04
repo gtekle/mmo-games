@@ -13,11 +13,26 @@ class InvolvementAPI {
       .catch((error) => error));
   }
 
+  async postLike(gameId) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ item_id: gameId }),
+    };
+
+    try {
+      const response = await fetch(`${process.env.INVOLVEMENT_API_BASE_URL}${process.env.APP_ID}/likes`, requestOptions);
+      this.responseStatus = response.status;
+    } catch (error) {
+      this.responseStatus = error;
+    }
+    return this.responseStatus;
+  }
+
   async getLikes() {
     if (this.appLikes.length === 0) {
       await this.fetchLikes();
     }
-
     return this.appLikes;
   }
 

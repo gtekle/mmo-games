@@ -7,6 +7,7 @@ import renderCommentsPopUp from './components/GameCommentUI.js';
 import populateComments from './components/commenPopulateUI.js';
 import renderServerMessage from './components/serverMessageUI.js';
 import renderPagination from './components/PaginationUI.js';
+import likeButtonEventListner from './modules/LikesEventListner.js';
 
 const commentPopUpSectionElement = document.querySelector('#comment-popup-section');
 const mainContainerElement = document.querySelector('#main');
@@ -73,6 +74,9 @@ window.addEventListener('load', async () => {
   totalGamesLink.appendChild(numberOfGames);
   logoContainer.appendChild(logoIcon);
   logoContainer.appendChild(totalGamesLink);
+
   renderGames(gamesApi.pageNumber);
   renderPagination();
+
+  likeButtonEventListner();
 });
