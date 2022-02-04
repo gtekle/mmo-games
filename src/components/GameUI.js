@@ -1,3 +1,5 @@
+import involvementApi from "../modules/InvolvementAPI.js";
+
 const renderGame = (game) => {
   const gameListContainer = document.querySelector('.games-list');
   const listItem = document.createElement('li');
