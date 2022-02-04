@@ -8,7 +8,7 @@ const populateComments = (commentsArray, numberOfComments = 0) => {
       commentsContainerElement.innerHTML
       += `<p class="comment-individual-server-comment"> 
         <span>${element.creation_date} - </span> 
-        <span> ${element.username}: </span> 
+        <span> ${element.username}</span> 
         <span>${element.comment}</span> 
       </p>`;
     });
