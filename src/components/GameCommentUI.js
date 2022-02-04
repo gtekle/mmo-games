@@ -21,7 +21,7 @@ const renderCommentsPopUp = (game) => {
     </div>
     <div class="comment-comments-container">
       <div class="comment-server-comments-container">
-        <h3 class="comment-server-comments-header-text"> COMMENTS ("number of comments to be shown from server")</h3>
+        <h3 class="comment-server-comments-header-text" id="comment-number"> COMMENTS </h3>
         <div id="comments-container" class="comment-server-comments">
         </div>
       </div>

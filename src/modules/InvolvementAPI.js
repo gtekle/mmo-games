@@ -2,6 +2,7 @@ class InvolvementAPI {
   constructor() {
     this.appLikes = [];
     this.comments = [];
+    this.commentsCounter = 0;
     this.responseStatus = 200;
   }
 
@@ -27,6 +28,7 @@ class InvolvementAPI {
     } catch (error) {
       this.comments = error;
     }
+    this.getCommentCounter(this.comments);
     return this.comments;
   }
 
@@ -47,6 +49,15 @@ class InvolvementAPI {
       this.responseStatus = error;
     }
     return this.responseStatus;
+  }
+
+  getCommentCounter = (currentCommentsOfSelectedGame) => {
+    if (!(Array.isArray(currentCommentsOfSelectedGame))) {
+      this.commentsCounter = 0;
+    } else {
+      this.commentsCounter = currentCommentsOfSelectedGame.length;
+    }
+    return this.commentsCounter;
   }
 }
 
