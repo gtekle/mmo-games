@@ -67,7 +67,9 @@ mainContainer.addEventListener('click', async (event) => {
 window.addEventListener('load', async () => {
   commentPopUpSectionElement.style.display = 'none';
   const logoContainer = document.querySelector('.logo-container');
+  const navMenu = document.querySelector('.nav-menu');
   const totalGamesLink = document.createElement('a');
+  totalGamesLink.classList.add('game-count-link');
   totalGamesLink.href = '#';
   const numberOfGames = document.createElement('p');
   const logoIcon = new Image();
@@ -79,7 +81,7 @@ window.addEventListener('load', async () => {
   numberOfGames.textContent = `Games(${gamesApi.getNumberOfGames()})`;
   totalGamesLink.appendChild(numberOfGames);
   logoContainer.appendChild(logoIcon);
-  logoContainer.appendChild(totalGamesLink);
+  navMenu.appendChild(totalGamesLink);
 
   renderGames(gamesApi.pageNumber);
   renderPagination();

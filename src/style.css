@@ -75,7 +75,7 @@ body {
   background-color: #fff;
   border-bottom: 2px solid #ebebeb;
   align-items: center;
-  padding: 12px 5%;
+  padding: 8px 10%;
 }
 
 .logo-container {
@@ -85,12 +85,10 @@ body {
   width: 30%;
 }
 
-.logo-container a {
-  align-self: flex-end;
-  padding: 5px 0;
-}
-
 .nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 65%;
   align-self: flex-end;
 }
@@ -98,8 +96,7 @@ body {
 .nav-list {
   display: flex;
   list-style: none;
-  justify-content: flex-end;
-  padding-right: 14%;
+  justify-content: space-around;
 }
 
 .nav-item + .nav-item {
@@ -115,6 +112,18 @@ body {
 
 .nav-link:hover {
   color: rgb(0, 0, 0);
+}
+
+.game-count-link {
+  padding: 0;
+  text-decoration: none;
+  margin: 0;
+  border: 1px solid lightblue;
+  vertical-align: bottom;
+  padding: 2px 5px;
+  padding-bottom: 0;
+  border-bottom: none;
+  border-radius: 10px;
 }
 
 .comment-popup-section {
@@ -284,7 +293,7 @@ input {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
   border-radius: 10px;
-  width: 30%;
+  width: 28%;
   padding: 24px 1px;
 }
 
