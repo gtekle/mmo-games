@@ -1,0 +1,328 @@
+/* Basic CSS reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgb(147, 147, 189);
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: rgb(80, 77, 77);
+}
+
+.btn:disabled {
+  cursor: default;
+  background-color: rgb(209, 201, 201);
+  color: grey;
+}
+
+.btn:hover:not([disabled]) {
+  background-color: rgb(219, 217, 217);
+  color: blue;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+}
+
+.logo-container a {
+  align-self: flex-end;
+  padding: 5px 0;
+}
+
+.nav-menu {
+  width: 65%;
+  align-self: flex-end;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  padding-right: 14%;
+}
+
+.nav-item + .nav-item {
+  margin-left: 36px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: #474747;
+  padding: 0;
+}
+
+.nav-link:hover {
+  color: blue;
+}
+
+.comment-popup-section {
+  display: none;
+  font-family: Georgia, serif;
+}
+
+.comment-pop-up-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid black;
+  border-radius: 40px;
+  margin: 1rem 1rem;
+}
+
+.image-thumbnail-delete-icon-container {
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+}
+
+.comment-game-image {
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.comment-delete-icon {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+
+.comment-game-short-description-details {
+  margin: 10px auto;
+  width: 80%;
+  font-size: 1rem;
+}
+
+.comment-name-of-game {
+  text-align: center;
+  margin: 10px auto;
+  font-weight: 700;
+}
+
+.comment-game-description-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60%;
+  margin: 10px auto;
+  font-size: 0.8rem;
+}
+
+.comment-game-description-details {
+  margin-left: 15px;
+  padding: 5px;
+}
+
+.comment-comments-container {
+  width: 60%;
+  margin: 15px auto;
+}
+
+.comment-server-comments-container {
+  margin: 10px auto 25px;
+}
+
+.comment-individual-server-comment {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.comment-server-comments-header-text {
+  text-align: center;
+  margin: 15px auto;
+  font-weight: 700;
+}
+
+.comment-comments-form-header-text {
+  text-align: center;
+}
+
+.comment-add-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 5px;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.comment-input-text-name {
+  border: 2px solid rgb(85, 82, 82);
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  height: 1.5rem;
+  width: 50%;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.comment-input-text-comment {
+  border: 2px solid rgb(85, 82, 82);
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  height: 4rem;
+  width: 50%;
+  padding: 5px;
+}
+
+.comment-button-submit {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgb(147, 147, 189);
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: rgb(80, 77, 77);
+}
+
+#server-message-prompt {
+  display: none;
+  border: 2px solid green;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+#comment-gameID {
+  display: none;
+}
+
+#main {
+  width: 80%;
+  margin: 16px auto;
+}
+
+#main ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 36px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  width: 28%;
+  padding: 5px;
+}
+
+.game-title-and-social-activities {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.social-activities {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-activities i {
+  align-self: center;
+  color: red;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-previous,
+.btn-next {
+  padding: 5px;
+}
+
+footer {
+  margin-top: auto;
+  border: 2px solid black;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-container {
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .game {
+    margin-bottom: 36px;
+    width: 100%;
+    padding: 5px;
+  }
+}
