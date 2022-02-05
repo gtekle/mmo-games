@@ -11,6 +11,8 @@ import likeButtonEventListner from './modules/LikesEventListner.js';
 
 const commentPopUpSectionElement = document.querySelector('#comment-popup-section');
 const mainContainerElement = document.querySelector('#main');
+const header = document.querySelector('header');
+const footer = document.querySelector('footer');
 const mainContainer = document.querySelector('#games-list');
 
 commentPopUpSectionElement.addEventListener('submit', async (event) => {
@@ -39,12 +41,16 @@ commentPopUpSectionElement.addEventListener('click', (event) => {
   if (event.target.id === 'delete-popup') {
     commentPopUpSectionElement.style.display = 'none';
     mainContainerElement.style.display = 'block';
+    header.style.display = 'block';
+    footer.style.display = 'block';
   }
 });
 
 mainContainer.addEventListener('click', async (event) => {
   if (event.target.classList.contains('btn-comments')) {
     mainContainerElement.style.display = 'none';
+    header.style.display = 'none';
+    footer.style.display = 'none';
     const currentGame = gamesApi.getGameById(Number(event.target.id / 100));
     let gameComments = [];
     try {

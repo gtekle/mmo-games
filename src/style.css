@@ -40,6 +40,7 @@ body {
   flex-direction: column;
   background-color: #f3f2ef;
   min-height: 100vh;
+  z-index: 1;
 }
 
 .btn {
@@ -119,6 +120,15 @@ body {
 .comment-popup-section {
   display: none;
   font-family: Georgia, serif;
+  margin: 0 5%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
 }
 
 .comment-pop-up-container {
