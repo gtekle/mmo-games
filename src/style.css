@@ -288,6 +288,11 @@ input {
   padding: 24px 1px;
 }
 
+.game:hover {
+  outline: 1px solid lightblue;
+  box-shadow: 8px 8px 8px 4px rgba(0, 0, 255, 0.2);
+}
+
 .game-title-and-social-activities {
   display: flex;
   justify-content: space-between;
