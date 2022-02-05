@@ -46,6 +46,7 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "dotenv-webpack": "^7.1.0"
   }
 }

@@ -1,3 +1,5 @@
+import PLAY_BUTTON from '../assets/img/icons8-start-48.png';
+
 const renderGame = (game) => {
   const gameListContainer = document.querySelector('.games-list');
   const listItem = document.createElement('li');
@@ -15,7 +17,12 @@ const renderGame = (game) => {
         <p class="likes-quantity">${game.likes} likes</p>
       </div>
     </div>
-    <button class="btn btn-comments" type="button" id=${game.id * 100}>Comments</button>`;
+    <div class="game-play-comment">
+      <a href=${game.game_url}>
+        <img src=${PLAY_BUTTON} alt="game thumbnail image">
+      </a>
+      <button class="btn btn-comments" type="button" id=${game.id * 100}>Comments</button>
+    </div>`;
 
   gameListContainer.appendChild(listItem);
 };
