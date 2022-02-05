@@ -38,6 +38,7 @@ img {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #f3f2ef;
   min-height: 100vh;
 }
 
@@ -60,12 +61,18 @@ body {
 
 .btn:hover:not([disabled]) {
   background-color: rgb(219, 217, 217);
-  color: blue;
+  color: #000;
 }
 
 #header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 2px solid #ebebeb;
   align-items: center;
   padding: 12px 5%;
 }
@@ -100,13 +107,13 @@ body {
 
 .nav-link {
   text-decoration: none;
-  font-size: 24px;
-  color: #474747;
+  font-size: 18px;
+  color: #707070;
   padding: 0;
 }
 
 .nav-link:hover {
-  color: blue;
+  color: rgb(0, 0, 0);
 }
 
 .comment-popup-section {
@@ -247,8 +254,9 @@ input {
 }
 
 #main {
-  width: 80%;
+  width: 75%;
   margin: 16px auto;
+  padding-bottom: 32px;
 }
 
 #main ul {
@@ -262,9 +270,13 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 36px;
-  width: 28%;
-  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  border-radius: 10px;
+  width: 30%;
+  padding: 24px 1px;
 }
 
 .game-title-and-social-activities {
@@ -296,6 +308,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px 0;
 }
 
 .btn-previous,
@@ -305,10 +318,11 @@ input {
 
 footer {
   margin-top: auto;
-  border: 2px solid black;
+  background-color: #474747;
+  color: #fff;
   width: 100%;
   text-align: center;
-  padding: 5px;
+  padding: 16px 0;
 }
 
 @media screen and (max-width: 768px) {
