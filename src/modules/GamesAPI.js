@@ -20,7 +20,7 @@ class GamesApi {
       .then((response) => response.json())
       .then((data) => data)
       .catch((error) => error));
-
+    console.log(this.games);
     return this.games;
   }
 
